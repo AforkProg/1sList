@@ -121,7 +121,12 @@ public:
 	}
 	~cList()
 	{
-
+		sList * trash = head;
+		while (trash != nullptr)
+		{
+			head = head->nextElem;
+			delete trash;
+		}
 	}
 private:
 	sList * head;
@@ -148,7 +153,7 @@ int main()
 	fun.p_back(50);
 	fun.l_print();
 	cout << "---" << endl;
-	fun.changeCount(5, 405);
+	fun.DeleteCount(2);
 	fun.l_print();
 	system("pause");
 	return 0;
